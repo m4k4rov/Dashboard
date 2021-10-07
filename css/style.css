@@ -205,8 +205,12 @@ main.active
   width: 100%;
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
+}
+main.active .cardBx 
+{
+  grid-template-columns: repeat(4, 1fr);
 }
 .cardBx .card 
 {
@@ -248,6 +252,30 @@ main.active
 {
   color: var(--white);
 }
+/* --------------------------------charts-------------------------- */
+.graphBx 
+{
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 30px;
+}
+.graphBx .box 
+{
+  position: relative;
+  background: var(--white);
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 15px;
+  min-height: 200px;
+}
+canvas 
+{
+  width: 100%;
+}
 /* ---------------------------------- details --------------------- */
 .details 
 {
@@ -257,7 +285,6 @@ main.active
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 30px;
- /*  margin-top: 10px; */
 }
 /* -----------------------recentOrders----------------------- */
 .details .recentOrders 
@@ -410,6 +437,10 @@ main.active
 /* -------------------responsive--------------------------- */
 @media (max-width: 991px)
 {
+  .graphBx 
+  {
+    grid-template-columns: 1fr;
+  }
   nav 
   {
     left: -300px;
@@ -437,10 +468,18 @@ main.active
   {
     grid-template-columns: repeat(2, 1fr);
   }
+  main.active .cardBx 
+  {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 768px) 
 {
   .cardBx 
+  {
+    grid-template-columns: 1fr;
+  }
+  main.active .cardBx 
   {
     grid-template-columns: 1fr;
   }
